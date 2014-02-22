@@ -6,34 +6,38 @@ import java.util.Collection;
 
 public class Comments
 {
-
 	public String comment;
-	public Date date;
-	public User user;
+	public String date;
+	public String user;
 	public String getComment() {
 		return comment;
 	}
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public Date getCommentDate()
+	public String getCommentDate()
 	{
 		return date;
 	}
-	public void setCommentDate(Date date)
+	public void setCommentDate(String date)
 	{
 		this.date = date;
 	}
-	public User getCommentUser()
+	public String getCommentUser()
 	{
 		return user;
 	}
-	public void setCommentUser(User user)
+	public void setCommentUser(String user)
 	{
 		this.user = user;
 	}
+	public Comments(String comment, String date, String user) {//Add More Parameters later
+		super();
+		this.comment = comment;
+		this.date = date;
+		this.user = user;
+	}
 
-	
 	
 	
 	

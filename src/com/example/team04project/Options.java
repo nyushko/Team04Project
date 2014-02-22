@@ -1,5 +1,11 @@
 package com.example.team04project;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -9,12 +15,29 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Options extends Activity {
-
+	public String saveFile="username.txt";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_options);
 		String username = null;
+		//If I save the user class to memory then i don't have to read this file and can remove this code
+		//This reads a file from internal storage to see if a user name already exists
+		try {
+			FileInputStream fis = openFileInput(saveFile);//Not sure what it is complaining
+			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+			String aline = in.readLine();
+			username=aline;
+			fis.close();
+			}
+		catch (FileNotFoundException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+		} 
+		catch (IOException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+		}
 		TextView usernameView = new TextView(this);
 		Button btnUser = new Button(this);
 		LinearLayout ll = (LinearLayout)findViewById(R.id.optionId);
