@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Date
+public class Dates
 {
 	//Gets the current date in the format of Month day, Year-Hour:Minute
 	Calendar date = Calendar.getInstance();

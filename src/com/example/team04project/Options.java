@@ -3,11 +3,16 @@ package com.example.team04project;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.google.gson.Gson;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.view.Menu;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
@@ -21,23 +26,17 @@ public class Options extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_options);
 		String username = null;
-		//If I save the user class to memory then i don't have to read this file and can remove this code
+		Gson gson = new Gson();
 		//This reads a file from internal storage to see if a user name already exists
-		try {
-			FileInputStream fis = openFileInput(saveFile);//Not sure what it is complaining
-			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-			String aline = in.readLine();
-			username=aline;
-			fis.close();
-			}
-		catch (FileNotFoundException e) {
-             // TODO Auto-generated catch block
-             e.printStackTrace();
-		} 
-		catch (IOException e) {
-             // TODO Auto-generated catch block
-             e.printStackTrace();
+		try{
+			BufferedReader br = new BufferedReader (new FileReader(saveFile));
+			User u = gson.fromJson(br, User.class);
+			username = u.getUser();
+		}catch(IOException e){
+			e.printStackTrace();
 		}
+		//TEST ABOVE NOT SURE IF IT'LL WORK
+		
 		TextView usernameView = new TextView(this);
 		Button btnUser = new Button(this);
 		LinearLayout ll = (LinearLayout)findViewById(R.id.optionId);
@@ -56,6 +55,16 @@ public class Options extends Activity {
 		ll.addView(usernameView);
 		ll.addView(btnUser);
 		//TO DO create on click for the button and save the user name
+		//Saving the username class to a txt file in internal storage
+		String json = gson.toJson(u);//See what this error is
+		try {
+			FileWriter writer = new FileWriter(saveFile);
+			writer.write(json);
+			writer.close();
+	 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

@@ -8,16 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CreateComment" >
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/comment"
-        android:layout_below="@+id/comment"
-        android:layout_marginTop="62dp"
-        android:text="@string/Create" 
-    	android:onclick= "postComment" />
-
     <EditText
         android:id="@+id/comment"
         android:layout_width="wrap_content"
@@ -32,5 +22,15 @@
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/comment"
+        android:layout_below="@+id/comment"
+        android:layout_marginTop="38dp"
+        android:onclick="postComment"
+        android:text="@string/Create" />
 
 </RelativeLayout>

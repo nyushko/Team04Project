@@ -11,6 +11,7 @@ public class CreateComment extends Activity {
 		//Gets the date,user and other things from their classes and changes them to strings and makes a new comment
 		Dates date = new Dates();
 		User user = new User();
+		//Get the other parameters too
 		EditText text = (EditText) findViewById(R.id.comment);
 		String commentText = text.getText().toString();
 		String currDate = date.getDate();
