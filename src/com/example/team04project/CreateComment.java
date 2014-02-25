@@ -1,7 +1,10 @@
 package com.example.team04project;
 
+import com.google.gson.Gson;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -16,10 +19,15 @@ public class CreateComment extends Activity {
 		String commentText = text.getText().toString();
 		String currDate = date.getDate();
 		String theUser=user.getUser();
-		//Intialize the comments class
+		//Initialize the comments class
 		Comments newComment = new Comments (commentText,currDate,theUser );
 		
-		//I want to send the class through an intent but not quite sure how to do that yet
+		//How I believe to send the comments through an intent
+		Gson gson = new Gson();
+		Intent intent = new Intent(this, BrowseComment.class);//Temporary location for now might have to put it in a controller
+		String json= gson.toJson(newComment);
+		intent.putExtra("Class", json);
+		startActivity(intent);
 	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

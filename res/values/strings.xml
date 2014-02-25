@@ -9,5 +9,6 @@
     <string name="title_activity_create_comment">CreateComment</string>
     <string name="Create">Create</string>
     <string name="enterComment">Write Comment</string>
+    <string name="title_activity_browse_comment">BrowseComment</string>
 
 </resources>
