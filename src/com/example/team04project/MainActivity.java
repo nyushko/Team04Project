@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 public class MainActivity extends Activity {
+	//An list that holds all the comments made by all users
 	ArrayList<Comments> browseComment = new ArrayList<Comments>();
 
 
@@ -43,11 +44,11 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-        	case R.id.createComment://CREATE A MENU XML
+        	case R.id.createComment:
         		Intent intent = new Intent(MainActivity.this, CreateCommentView.class);
         		startActivityForResult(intent,0);
         		break;
-        	case R.id.options://CREATE A MENU XML
+        	case R.id.options:
         		Intent intent1 = new Intent(this,OptionsView.class);
         		startActivity(intent1);
         		break;
@@ -64,6 +65,7 @@ public class MainActivity extends Activity {
 	public void onActivityResult(int requestCode,int resultCode, Intent data){	
 		super.onActivityResult(requestCode, resultCode, data);
 		if (resultCode == RESULT_OK){
+			//Turn the json string into a class 
 			Gson gson = new Gson();
 			String json=data.getExtras().getString("Class");
 			Comments newComment = gson.fromJson(json, Comments.class);
@@ -74,9 +76,13 @@ public class MainActivity extends Activity {
 			LinearLayout ll = (LinearLayout)findViewById(R.id.browseComment);
 			TextView comments= new TextView(this);
 			comments.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT));
-			comments.setText("--------------------\n"+newComment.getComment()+"\n"+newComment.getCommentUser()+" "+newComment.getCommentDate()+"\n");
+			comments.setText("--------------------\n"+newComment.getComment()+"\n"
+					+newComment.getCommentUser()+" "+newComment.getCommentDate()+"\n");
 			ll.addView(comments);
-			ElasticSearch.pushComment(newComment);
+			
+			
+			
+			//ElasticSearch.pushComment(newComment);
 		}
 	}
 	

@@ -21,10 +21,12 @@ import com.example.team04project.User;
 
 
 public class OptionsView extends Activity {
-/*
- Gets the user name from internal storage
- then retrieves it and sets the username for the username class
- */
+
+	
+	/*
+ 	Gets the user name from internal storage
+ 	then retrieves it and sets the username for the username class
+	 */
 	private static String saveFile = "username.sav";
 	public void loadUser(){
 		try{
@@ -42,6 +44,9 @@ public class OptionsView extends Activity {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
 	/*
 	 * Saves the username to internal storage so it can be retrieved for future uses
 	 */
@@ -58,8 +63,10 @@ public class OptionsView extends Activity {
 			  e.printStackTrace();
 			}
 	}
+	
+	
 	/*
-	 * Button that takes the Users new user name
+	 * Button that takes the Users new user name and sets it
 	 */
 	public void setUsername(View view){
 		EditText text = (EditText) findViewById(R.id.editText1);
@@ -68,12 +75,21 @@ public class OptionsView extends Activity {
 		saveUser(username);
 		Toast.makeText(OptionsView.this, "New Username made", Toast.LENGTH_SHORT).show();
 	}
+	
+	/*
+	 * pressing this button makes the edit text visible for the user to 
+	 * make a new user name.
+	 */
+	
 	public void changeUser(View view){
 		View edit = findViewById(R.id.editText1);
 		edit.setVisibility(View.VISIBLE);
 		View button =findViewById(R.id.button1);
 		button.setVisibility(View.VISIBLE);
 	}
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

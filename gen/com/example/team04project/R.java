@@ -29,22 +29,26 @@ public final class R {
         public static final int button1=0x7f080001;
         public static final int button2=0x7f080006;
         public static final int comment=0x7f080000;
+        public static final int createComment=0x7f080008;
         public static final int editText1=0x7f080004;
         public static final int optionId=0x7f080003;
+        public static final int options=0x7f080009;
         public static final int textView1=0x7f080005;
     }
     public static final class layout {
         public static final int activity_browse_comment=0x7f030000;
-        public static final int activity_create_comment=0x7f030001;
+        public static final int activity_create_comment_view=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int activity_options=0x7f030003;
+        public static final int activity_options_view=0x7f030003;
     }
     public static final class menu {
         public static final int browse_comment=0x7f070000;
-        public static final int create_comment=0x7f070001;
-        public static final int main=0x7f070002;
-        public static final int options=0x7f070003;
-        public static final int settings=0x7f070004;
+        public static final int create_comment_view=0x7f070001;
+        public static final int create_menu=0x7f070002;
+        public static final int main=0x7f070003;
+        public static final int options_menu=0x7f070004;
+        public static final int options_view=0x7f070005;
+        public static final int settings=0x7f070006;
     }
     public static final class string {
         public static final int Change=0x7f05000c;

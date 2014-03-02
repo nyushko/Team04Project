@@ -17,21 +17,14 @@ import android.widget.Toast;
 public class Picture
 {
 	
-	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+	/*private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	public static final int MEDIA_TYPE_IMAGE = 1;
 	private Uri fileUri;
 
-	/** 
-	 * @uml.property name="comments"
-	 * @uml.associationEnd multiplicity="(0 -1)" inverse="picture:com.example.team04project.Comments"
-	 */
+	
 	private Collection<Comments> comments;
 
-	/** 
-	 * Getter of the property <tt>comments</tt>
-	 * @return  Returns the comments.
-	 * @uml.property  name="comments"
-	 */
+
 	public Collection<Comments> getComments()
 	
 	
@@ -68,7 +61,7 @@ public class Picture
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 
-	/** Create a File for saving an image or video */
+	*//** Create a File for saving an image or video *//*
 	private static File getOutputMediaFile(int type){
 	    // To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
@@ -99,14 +92,10 @@ public class Picture
 	    return mediaFile;
 	}
 
-	/** 
-	 * Setter of the property <tt>comments</tt>
-	 * @param comments  The comments to set.
-	 * @uml.property  name="comments"
-	 */
+
 	public void setComments(Collection<Comments> comments)
 	{
 
 		this.comments = comments;
-	}
+	}*/
 }

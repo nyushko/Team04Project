@@ -1,3 +1,4 @@
+package com.example.team04project;
 
 
 
@@ -12,7 +13,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.util.Log;
 
-import com.example.team04project.Comments;
 import com.google.gson.Gson;
 
 public class ElasticSearch {

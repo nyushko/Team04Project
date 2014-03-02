@@ -34,20 +34,28 @@ public class CreateCommentView extends Activity {
 		}catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			} 
-		catch (IOException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	
 	 public void postComment(View view){
   		//Gets the date,user and other things from their classes and changes them to strings and makes a new comment
 
-  		//Get the other parameters too
   		EditText text = (EditText) findViewById(R.id.comment);
   		String commentText = text.getText().toString();
   		String currDate = Dates.getDate();
   		loadUser();
+  		
+  		
+  		/*
+  		 * If no user name is set then the program tells the user
+  		 * that they need a user name to make a comment otherwise
+  		 * it will make the comment then turn it into a json string and
+  		 * send it through an intent back to the mainactivity.java
+  		 */
   		if (User.getUser()==null){
 			Toast.makeText(CreateCommentView.this, "You need to make a username to post comments", Toast.LENGTH_SHORT).show();
 			finish();
@@ -64,6 +72,9 @@ public class CreateCommentView extends Activity {
   	  		finish();
   		}
   	}
+	 
+	 
+	 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

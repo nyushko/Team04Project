@@ -35,7 +35,7 @@
             android:label="@string/title_activity_create_comment" >
         </activity>
         <activity
-            android:name="com.example.team04project.BrowseComment"
+            android:name="com.example.team04project.BrowseCommentView"
             android:label="@string/title_activity_browse_comment" >
         </activity>
     </application>
