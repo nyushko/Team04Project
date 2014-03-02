@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 			
 			
 			
-			//ElasticSearch.pushComment(newComment);
+			ElasticSearch.pushComment(newComment);
 		}
 	}
 	
