@@ -1,11 +1,6 @@
 package com.example.team04project;
 
-import java.util.Collection;
-
-
-
-public class Comments
-{
+public class Comments {
 	public String comment;
 	public String date;
 	public String user;
@@ -31,82 +26,10 @@ public class Comments
 	{
 		this.user = user;
 	}
-	public Comments(String comment, String date, String user) {//Add More Parameters later
+	public Comments(String comment, String date, String user) {
 		super();
 		this.comment = comment;
 		this.date = date;
 		this.user = user;
-	}
-
-	
-	
-	
-	private Collection<Picture> picture;
-
-	
-	public Collection<Picture> getPicture()
-	{
-		return picture;
-	}
-
-
-
-	private Collection<Location> location;
-
-	
-	public Collection<Location> getLocation()
-	{
-		return location;
-	}
-
-	private Collection<Favourites> favourites;
-
-	public Collection<Favourites> getFavourites()
-	{
-		return favourites;
-	}
-
-	public void sort(){
-	
-	}
-	public void  sortByProximaty(){
-		
-	}
-	public void attachPicture(){
-		
-	}
-	public void sortByDate(){
-		
-	}
-	public void cacheComments(){
-		
-	}
-	public void shareComments(){
-		
-	}
-	public void changeGeoLocation(){
-	}
-	public void edit(){
-		
-	}
-	public void sortByPicture(){
-		
-	}
-	
-	public void setFavourites(Collection<Favourites> favourites)
-	{
-		this.favourites = favourites;
-	}
-
-	
-	public void setPicture(Collection<Picture> picture)
-	{
-		this.picture = picture;
-	}
-
-	
-	public void setLocation(Collection<Location> location)
-	{
-		this.location = location;
 	}
 }

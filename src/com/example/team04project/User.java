@@ -1,13 +1,14 @@
 package com.example.team04project;
 
-public class User
-{	
-	private String username=null;
-	public void setUser(String string){
-		this.username=string;
+public class User {
+	private static String username=null;
+	
+	
+	public static void setUser(String string){
+		username=string;
 	}
-	public String getUser(){
+	public static String getUser(){
 		return username;
 	}
-
+	
 }

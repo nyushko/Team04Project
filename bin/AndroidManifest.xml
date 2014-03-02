@@ -27,11 +27,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.team04project.Options"
+            android:name="com.example.team04project.OptionsView"
             android:label="@string/title_activity_options" >
         </activity>
         <activity
-            android:name="com.example.team04project.CreateComment"
+            android:name="com.example.team04project.CreateCommentView"
             android:label="@string/title_activity_create_comment" >
         </activity>
         <activity

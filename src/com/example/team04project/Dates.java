@@ -1,18 +1,17 @@
 package com.example.team04project;
 
-import android.annotation.SuppressLint;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Dates
-{
-	//Gets the current date in the format of Month day, Year-Hour:Minute
-	Calendar date = Calendar.getInstance();
+import android.annotation.SuppressLint;
+
+public class Dates {
 	@SuppressLint("SimpleDateFormat")
-	SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy-HH:mm");
-	String strDate = sdf.format(date.getTime());
-	//Returns a string of date
-	public String getDate(){
+	public static String getDate(){
+		Calendar date = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy-HH:mm");
+		String strDate = sdf.format(date.getTime());
+		//Returns a string of date
 		return strDate;
 	}
 }
