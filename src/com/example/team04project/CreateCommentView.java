@@ -1,6 +1,7 @@
 package com.example.team04project;
 
 import java.io.BufferedReader;
+import java.util.UUID; 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class CreateCommentView extends Activity {
 	
 	 public void postComment(View view){
   		//Gets the date,user and other things from their classes and changes them to strings and makes a new comment
-
+		String uniqueKey = UUID.randomUUID().toString(); 
   		EditText text = (EditText) findViewById(R.id.comment);
   		String commentText = text.getText().toString();
   		String currDate = Dates.getDate();
@@ -62,7 +63,8 @@ public class CreateCommentView extends Activity {
   		}
   		else{
   			String theUser=User.getUser();
-  			Comments newComment = new Comments (commentText,currDate,theUser );
+  			Comments newComment = new Comments (commentText,currDate,theUser,"1" );
+  			//CommentList.addComment(newComment);//Problems here
   			
   			Gson gson = new Gson();
   	  		Intent intent = new Intent();

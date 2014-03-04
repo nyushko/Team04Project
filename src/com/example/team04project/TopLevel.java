@@ -8,7 +8,7 @@ public class TopLevel extends Comments
 	public TopLevel(String comment, String date, String user)
 	{
 
-		super(comment, date, user);
+		super(comment, date, user,id);
 		// TODO Auto-generated constructor stub
 	}
 
