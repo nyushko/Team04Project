@@ -69,7 +69,7 @@ public class Comments
 	public void sort(){
 	
 	}
-	public void  sortByProximaty(){
+	public void sortByProximaty(){
 		
 	}
 	public void attachPicture(){
