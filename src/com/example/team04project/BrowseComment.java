@@ -1,13 +1,8 @@
 package com.example.team04project;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
